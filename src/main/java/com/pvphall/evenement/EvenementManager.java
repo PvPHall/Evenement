@@ -24,6 +24,9 @@
 
 package com.pvphall.evenement;
 
+import com.pvphall.evenement.methods.EvenementHandler;
+import com.pvphall.evenement.methods.MethodHolder;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;

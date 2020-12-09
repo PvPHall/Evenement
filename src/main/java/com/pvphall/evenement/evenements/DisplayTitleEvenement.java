@@ -22,21 +22,26 @@
  * SOFTWARE.
  */
 
-package com.pvphall.evenement.impl;
+package com.pvphall.evenement.evenements;
 
 import com.pvphall.evenement.Evenement;
 
-public class ClientInitializeEvenement extends Evenement {
+public class DisplayTitleEvenement extends Evenement {
 
-    public ClientInitializeEvenement() {
+    private String displayTitle;
 
-        try {
+    public DisplayTitleEvenement(String displayTitle) {
 
-            Class.forName("com.pvphall.client.HallClient", true, this.getClass().getClassLoader());
+        this.displayTitle = displayTitle;
+    }
 
-        } catch (ClassNotFoundException e) {
+    public String getDisplayTitle() {
 
-            e.printStackTrace();
-        }
+        return this.displayTitle;
+    }
+
+    public void setDisplayTitle(String displayTitle) {
+
+        this.displayTitle = displayTitle;
     }
 }

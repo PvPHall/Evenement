@@ -22,15 +22,10 @@
  * SOFTWARE.
  */
 
-package com.pvphall.evenement;
+package com.pvphall.evenement.evenements.client;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import com.pvphall.evenement.Evenement;
 
-@Target(ElementType.METHOD)
-@Retention(RetentionPolicy.RUNTIME)
-public @interface EvenementHandler {
+public class ClientStartEvenement extends Evenement {
 
 }

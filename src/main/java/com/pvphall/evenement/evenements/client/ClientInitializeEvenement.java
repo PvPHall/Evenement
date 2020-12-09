@@ -22,35 +22,21 @@
  * SOFTWARE.
  */
 
-package com.pvphall.evenement;
+package com.pvphall.evenement.evenements.client;
 
-import java.lang.reflect.Method;
+import com.pvphall.evenement.Evenement;
 
-public class MethodHolder {
+public class ClientInitializeEvenement extends Evenement {
 
-    /**
-     * The method which will be called.
-     */
-    private Method method;
+    public ClientInitializeEvenement() {
 
-    /**
-     * The instance of the object which hold the {@link MethodHolder#method}.
-     */
-    private Object holder;
+        try {
 
-    public MethodHolder(Method method, Object holder) {
+            Class.forName("com.pvphall.client.HallClient", true, this.getClass().getClassLoader());
 
-        this.method = method;
-        this.holder = holder;
-    }
+        } catch (ClassNotFoundException e) {
 
-    public Method getMethod() {
-
-        return this.method;
-    }
-
-    public Object getHolder() {
-
-        return this.holder;
+            e.printStackTrace();
+        }
     }
 }

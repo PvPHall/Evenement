@@ -22,26 +22,35 @@
  * SOFTWARE.
  */
 
-package com.pvphall.evenement.impl;
+package com.pvphall.evenement.methods;
 
-import com.pvphall.evenement.Evenement;
+import java.lang.reflect.Method;
 
-public class DisplayTitleEvenement extends Evenement {
+public class MethodHolder {
 
-    private String displayTitle;
+    /**
+     * The method which will be called.
+     */
+    private Method method;
 
-    public DisplayTitleEvenement(String displayTitle) {
+    /**
+     * The instance of the object which hold the {@link MethodHolder#method}.
+     */
+    private Object holder;
 
-        this.displayTitle = displayTitle;
+    public MethodHolder(Method method, Object holder) {
+
+        this.method = method;
+        this.holder = holder;
     }
 
-    public String getDisplayTitle() {
+    public Method getMethod() {
 
-        return this.displayTitle;
+        return this.method;
     }
 
-    public void setDisplayTitle(String displayTitle) {
+    public Object getHolder() {
 
-        this.displayTitle = displayTitle;
+        return this.holder;
     }
 }
